@@ -1,6 +1,6 @@
 function crearUsuario(datosUsuario){
   var data = new Date();
-	var dominio = "@dominio_propio";
+  var dominio = "@dominio_propio";
 
   try{
      //Creamos un objeto con los datos del usuario
@@ -36,7 +36,7 @@ function crearUsuario(datosUsuario){
 
 function actualizarFotoUsuario(datosUsuario){
   var dominio = "@dominio_propio";
-	try{
+  try{
      var userEmail = datosUsuario.usuario + dominio;
      var fileName  = datosUsuario.dni + ".jpg";  
      var blob = DriveApp.getFilesByName(fileName).next().getBlob();
