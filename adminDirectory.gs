@@ -27,7 +27,7 @@ function crearUsuario(datosUsuario){
      //Llamamos al método INSERT de la API de GRUPOS de Google
      membre = AdminDirectory.Members.insert(membre, datosUsuario.grupo + dominio);
   
-     actualitzarFotoAlumne(datosUsuario);
+     actualitzarFotoUsuario(datosUsuario);
   }
   catch(err){
      Logger.log(err.toString());
