@@ -43,10 +43,10 @@ function altaUsuarios() {
        {
          crearUsuario(datosUsuario);     
          //Indicamos la fecha en que se ha actualizado
-         sheet.getRange(fila+1, 6).setValue(fecha);
+         sheet.getRange(i+1, 6).setValue(fecha);
        }
       else{
-        sheet.getRange(fila+1, 6).setValue("El usuario ya existe. No se ha podido crear");
+        sheet.getRange(i+1, 6).setValue("El usuario ya existe. No se ha podido crear");
       }
     }
   }
