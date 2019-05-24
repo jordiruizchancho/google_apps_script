@@ -8,6 +8,7 @@
    datosUsuario.nombre = 'Nombre';
    datosUsuario.apellidos = 'Apellido1 Apellido2';
    datosUsuario.usuario = 'usuario';
+   datosUsuario.contrasena = '123456';
    datosUsuario.grupo = 'grupo';
    
    El DNI se utiliza para buscar en Drive la imagen que asociaremos al usuario
@@ -25,9 +26,9 @@ function crearUsuario(datosUsuario){
          familyName: datosUsuario.apellidos,
          fullName: datosUsuario.nombre + " " + datosUsuario.apellidos
        },
-       password: "123456",
+       password: datosUsuario.contrasena,
        changePasswordAtNextLogin: true,
-       orgUnitPath: "/Alumnado"
+       orgUnitPath: "/Alumnos"
      };
      //Llamamos al metodo INSERT de la API de USUARIOS de Google
      user = AdminDirectory.Users.insert(user);
