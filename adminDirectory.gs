@@ -1,5 +1,19 @@
+/*
+   La función crearUsuario nos permite dar de alta un usuario en el directorio de GSuite. 
+   Al mismo tiempo lo añadiremos a un grupo existente y actualizaremos su imagen de perfil
+   La función recibe un objeto con la informació del usuario:
+   
+   var datosUsuario = {};
+   datosUsuario.dni = '40677829R';
+   datosUsuario.nombre = 'Nombre';
+   datosUsuario.apellidos = 'Apellido1 Apellido2';
+   datosUsuario.usuario = 'usuario';
+   datosUsuario.grupo = 'grupo';
+   
+   El DNI se utiliza para buscar en Drive la imagen que asociaremos al usuario
+*/
+
 function crearUsuario(datosUsuario){
-  var data = new Date();
   var dominio = "@dominio_propio";
 
   try{
@@ -34,6 +48,10 @@ function crearUsuario(datosUsuario){
   }
 }
 
+/*
+  La función actualizarFotoUsuario se encarga de localizar una imagen cuyo nombre es el DNI con extensión JPEG.
+  Convertimos la imagen a formato Base64 para poder actualizar la imagen de perfil
+*/
 function actualizarFotoUsuario(datosUsuario){
   var dominio = "@dominio_propio";
   try{
@@ -48,5 +66,22 @@ function actualizarFotoUsuario(datosUsuario){
   catch(err) {
     Logger.log(err.toString());
   }  
+}
+
+/*
+  La función buscarUsuario nos permite saber si un usuario está o no creado en nuestro directorio de GSuite
+*/
+function buscarUsuario(datosUsuario){
+  var userEmail = datosUsuario.usuario+"@dominio_propio";
+  try{
+     //Llamamos al método GET de la librería USERS de Google
+     var user = AdminDirectory.Users.get(userEmail);
+     return true;  
+  }
+  catch(err) {
+    //Si se ha producido algun error en la llamada al método GET devolvemos FALSE
+    //Si no encuentra el usuario el método GET devuelve un error
+    return false;
+  }
 }
 
