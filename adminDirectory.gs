@@ -33,15 +33,15 @@ function crearUsuario(datosUsuario){
      user = AdminDirectory.Users.insert(user);
   
      //Añadimos el usuario al grupo
-     var membre = {
+     var miembro = {
        email: datosUsuario.usuario + dominio,
        role: 'MEMBER'
      };
   
      //Llamamos al método INSERT de la API de GRUPOS de Google
-     membre = AdminDirectory.Members.insert(membre, datosUsuario.grupo + dominio);
+     miembro = AdminDirectory.Members.insert(miembro, datosUsuario.grupo + dominio);
   
-     actualitzarFotoUsuario(datosUsuario);
+     actualizarFotoUsuario(datosUsuario);
   }
   catch(err){
      Logger.log(err.toString());
