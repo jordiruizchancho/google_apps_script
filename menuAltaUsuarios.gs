@@ -1,5 +1,5 @@
 /*
-  Aquí vemos un ejemplo para crear un nuevo menú en una hoja de cálculo que nos permitirà dar de alts de forma automática
+  Aquí vemos un ejemplo para crear un nuevo menú en una hoja de cálculo que nos permitirà dar de alta de forma automática
   una lista de usuarios.
   Partimos de una hoja de cálculo con las siguientes columnas
   DNI   ->   NOMBRE   ->   APELLIDOS   ->   USUARIO   ->   CONTRASEÑA   ->   GRUPO   ->   FECHA ACTUALIZACIÓN
